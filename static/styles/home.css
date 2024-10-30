@@ -1,0 +1,81 @@
+h3 {
+    color: #0056b3; /* Couleur bleu pour le sous-titre */
+    margin-top: 40px; /* Espace au-dessus du sous-titre */
+    text-align: center; /* Centrer le sous-titre */
+}
+h2 {
+    color: #333;
+}
+/* Styles des paragraphes */
+p {
+    margin-bottom: 15px; /* Espace entre les paragraphes */
+    padding: 0 10px; /* Espace latéral pour une meilleure lisibilité */
+}
+
+/* Styles des liens */
+a {
+    font-family: var(--font-primary);
+    color: #0056b3; /* Couleur des liens */
+    text-decoration: none; /* Suppression du soulignement */
+}
+
+a:hover {
+    text-decoration: underline; /* Soulignement au survol */
+}
+
+/* Styles des services */
+.services {
+    display: flex;
+    flex-wrap: wrap; /* Permet de passer à la ligne si l'espace est insuffisant */
+    justify-content: center; /* Centre les services */
+    margin-top: 20px; /* Espace au-dessus des services */
+}
+.services h3 {
+    bottom:20px;
+    position: relative;
+    color: #ffffff;
+}
+.service-item {
+    width: 100%; /* Par défaut, chaque service prend toute la largeur */
+    max-width: 300px; /* Largeur maximale des éléments de service */
+    text-align: center; /* Centrer le texte */
+    margin: 15px; /* Espace autour de chaque service */
+    padding: 10px; /* Espace intérieur */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ajout d'une ombre */
+    border-radius: 8px; /* Coins arrondis */
+    background-color: #f9f9f943; /* Couleur de fond légère */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Transition pour le transform et filter */
+}
+
+/* Effet de flou au survol */
+.service-item:hover {
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+    filter: blur(1px); /* Flou léger au survol */
+}
+
+/* Styles des icônes */
+.service-icon {
+    width: 50px; /* Taille des icônes */
+    height: 50px; /* Taille des icônes */
+    margin-bottom: 10px; /* Espace en bas des icônes */
+}
+
+
+/* Media queries pour la réactivité */
+@media (max-width: 768px) {
+    .service-item {
+        width: 80%; /* Réduire la largeur sur les petits écrans */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px; /* Taille du titre réduite */
+    }
+    h2 {
+        font-size: 20px; /* Taille du sous-titre réduite */
+    }
+    .service-item {
+        width: 90%; /* Réduire encore plus la largeur sur les très petits écrans */
+    }
+}

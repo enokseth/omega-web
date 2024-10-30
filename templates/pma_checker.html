@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}PMA Checker - Xex Panel{% endblock %}
+
+{% block content %}
+    <h2>PMA Checker</h2>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/pma.css') }}">
+    <form id="uploadForm" action="{{ url_for('pma_checker') }}" method="post" enctype="multipart/form-data">
+        <label for="file">Select File:</label>
+        <input type="file" name="file" id="file" required>
+        
+        <label for="file_format">File Format:</label>
+        <select name="file_format" id="file_format" required>
+            <option value="text">text</option>
+            <option value="json">json</option>
+        </select>
+        
+        <button type="submit">Submit</button>
+        <div class="download-buttons">
+            <button onclick="downloadResults('json')">Download JSON</button>
+            <button onclick="downloadResults('text')">Download Text</button>
+            <button onclick="downloadResults('csv')">Download CSV</button>
+            <button onclick="downloadResults('html')">Download HTML</button>
+        </div>
+    </form>
+
+    <div id="resultsContainer">
+        {% if success_results or error_results %}
+            <h3>Results</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="success">Result</th>
+                        <th>Country</th>
+                        <th>Auto-Link</th>
+                        <th>Host</th>
+                        <th>DB Username</th>
+                        <th>DB Password</th>
+                        <th>Database</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for result in success_results %}
+                        <tr>
+                            <td><span>{{ result.Result }}</span></td>
+                            <td>{{ result.CountryFlag }}</td>
+                            <td><a href="{{ result.Auto_Login_Link }}" target="_blank">{{ result.Auto_Login_Link }}</a></td>        
+                            <td>{{ result.DB_HOST }}</td>
+                            <td>{{ result.DB_USERNAME }}</td>
+                            <td>{{ result.DB_PASSWORD }}</td>
+                            <td>{{ result.DB_DATABASE }}</td>
+                        </tr>
+                    {% endfor %}
+                    {% for result in error_results %}
+                        <tr>
+                            <td><span class="error">{{ result.error }}</span></td>
+                            <td>{{ result.entry.DBS_COUNTRY | get_flag }}</td>
+                            <td>{{ result.entry.DB_HOST }}</td>
+                            <td>{{ result.entry.DB_USERNAME }}</td>
+                            <td>{{ result.entry.DB_PASSWORD }}</td>
+                            <td>{{ result.entry.DB_DATABASE }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+          
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/pma_checker.js') }}"></script>
+{% endblock %}

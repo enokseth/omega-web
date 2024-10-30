@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #121212;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header {
+    position: relative;
+    width: 100vw;
+    background-color: #1a1a1a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid #333;
+}
+
+header h2 {
+    color: #00ff00;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    text-align: center;
+    font-size: 1em;
+    background-color: #121212;
+    text-shadow: 0 0 10px #2d0ecaac;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #00ff00;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+nav ul li:hover {
+    color: #ff4500;
+    text-shadow: 0 0 8px #ff4500;
+}
+
+nav ul li a:hover + .dropdown-content, .dropdown-content:hover {
+    display: block;
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    left: 0;
+    height: 2px;
+    background: #ff4500;
+    transition: width .4s;
+    position: absolute; /* Ajoute cette ligne pour positionner l'élément */
+    bottom: 3px; /* Positionne juste en dessous du texte */
+}
+
+.nav-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #00ff00;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+button {
+    top: 10px;
+    background-color: #1a1a1a;
+    color: #00ff00;
+    border: 2px solid #333;
+    padding: 20px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff6600;
+    box-shadow: 0 0 10px #ff6600;
+}
+

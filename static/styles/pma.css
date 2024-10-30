@@ -1,0 +1,124 @@
+/* Reset des styles de base */
+main, h2, h3, p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif; /* Remplacez par la police de votre choix */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    min-width: 600px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    table-layout: fixed; /* Pour un meilleur contrôle des colonnes */
+}
+
+/* En-tête du tableau */
+thead tr {
+    background-color: #444; /* Couleur de fond de l'en-tête */
+    color: #00ff00;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Largeur maximale des colonnes */
+th, td {
+    max-width: 150px; /* Ajustez cette valeur selon vos besoins */
+    overflow: hidden; /* Masque le débordement */
+    text-overflow: ellipsis; /* Affiche des points de suspension si le texte est trop long */
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+    padding: 8px 10px; /* Réduction du padding */
+    background-color: #1a1a1a; /* Couleur de fond des cellules */
+    color: #00ff00;
+    transition: background-color 0.3s ease;
+}
+
+/* Espacement entre les lignes pour améliorer la lisibilité */
+tbody tr {
+    margin-bottom: 10px; /* Espacement entre les lignes */
+    border-radius: 8px; /* Coins arrondis pour les lignes */
+    box-shadow: 0 2px 10px rgba(0, 255, 0, 0.2); /* Ombre pour un effet 3D */
+}
+
+/* Effet survol */
+tbody tr:hover {
+    background-color: rgba(0, 255, 0, 0.1); /* Légère modification de l'arrière-plan au survol */
+}
+
+/* Style des liens */
+td a {
+    color: #00ff00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+td a:hover {
+    color: #ff4500; /* Couleur des liens au survol */
+}
+
+/* Style pour le texte des messages d'erreur et de succès */
+.success {
+    color: #00ff00;
+    font-weight: bold;
+    text-align: center;
+}
+
+.error {
+    color: #ff4500;
+    font-weight: bold;
+}
+
+/* Responsive: Réduction des tailles sur mobile */
+@media (max-width: 768px) {
+    table, tbody, td, th {
+        display: block;
+        width: 100%;
+    }
+
+    td {
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 10px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    td a {
+        display: inline-block;
+    }
+}
+
+/* Style des boutons */
+.download-buttons button {
+    background-color: #00ff00; /* Couleur de fond des boutons */
+    color: #1a1a1a; /* Couleur du texte des boutons */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+}
+
+.download-buttons button:hover {
+    background-color: #ff4500; /* Couleur de fond au survol */
+}
+
+/* Styles de titre */
+h2, h3 {
+    color: #00ff00; /* Couleur des titres */
+    text-align: center;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,53 @@
+
+.settings-container {
+    display: flex; /* Pour créer un layout flexible avec la sidebar et le contenu principal */
+}
+
+.sidebar {
+    width: 250px; /* Largeur fixe pour le menu latéral */
+    background-color: #121212; /* Couleur de fond pour la sidebar */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Légère ombre pour le menu */
+}
+
+.menu-item {
+    display: flex; /* Utilise flexbox pour aligner l'icône et le texte */
+    align-items: center; /* Aligne verticalement les éléments */
+    padding: 10px 0; /* Espacement vertical */
+    cursor: pointer; /* Curseur main sur hover */
+}
+
+.menu-item:hover {
+    background-color: #e8e8e825; /* Changer de couleur au survol */
+}
+
+.icon {
+    width: 40px; /* Taille de l'icône */
+    height: 40px; /* Taille de l'icône */
+    margin-right: 10px; /* Espacement à droite de l'icône */
+}
+
+.main-content {
+    flex: 1; /* Prend le reste de l'espace disponible */
+    padding: 20px; /* Espacement intérieur */
+}
+
+h2 {
+    color: #333; /* Couleur du titre principal */
+}
+
+h3 {
+    color: #555; /* Couleur des sous-titres */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .settings-container {
+        flex-direction: column; /* Stack les éléments en colonne sur petits écrans */
+    }
+
+    .sidebar {
+        width: 100%; /* Prend toute la largeur */
+        box-shadow: none; /* Enlève l'ombre sur petits écrans */
+    }
+}

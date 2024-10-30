@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Xex Panel{% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/variables.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/animations.css') }}">
+</head>
+
+<body>
+        <header class="bounce-animation">
+                <h2 class="fade-in">OMEGA PLATFORM</h2>
+                <nav>
+                        <ul>
+                                <li><a href="{{ url_for('home') }}"><img
+                                                        src="{{ url_for('static', filename='icons/home.png') }}"
+                                                        alt="Home Icon" class="nav-icon">HOME</a></li>
+
+                                <!-- ============================== SETTINGS ============================ -->
+
+                                <li class="dropdown">
+                                        <a href="{{ url_for('settings') }}" class="droptbtn"><img
+                                                        src="{{ url_for('static', filename='icons/settings.png') }}"
+                                                        alt="Settings Icon" class="nav-icon">SETTINGS</a>
+                                        <div class="dropdown-content">
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/user.png') }}"
+                                                                alt="Account Icon" class="nav-icon">Account</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/server.png') }}"
+                                                                alt="Proxy Icon" class="nav-icon">Proxy</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/platform.png') }}"
+                                                                alt="Platform Icon" class="nav-icon">Infos</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/notification.png') }}"
+                                                                alt="Notification Icon"
+                                                                class="nav-icon">Notification</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/theme.png') }}"
+                                                                alt="Theme Icon" class="nav-icon">Themes</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/backup-server-icon.png') }}"
+                                                                alt="Backup Icon" class="nav-icon">Backup</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/programming.png') }}"
+                                                                alt="API Keys Icon" class="nav-icon">A.P.I</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/cloud-storage.png') }}"
+                                                                alt="Import Export Icon"
+                                                                class="nav-icon">Import/Export</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/permissions.png') }}"
+                                                                alt="Permissions Icon" class="nav-icon">Permissions</a>
+                                        </div>
+                                </li>
+
+                                <!-- ============================== CHECKER MENU ============================ -->
+
+                                <li class="dropdown">
+                                        <a href="{{ url_for('checker') }}" class="droptbtn"><img
+                                                        src="{{ url_for('static', filename='icons/check-circle.png') }}"
+                                                        alt="Checker Icon" class="nav-icon">CHECKER</a>
+                                        <div class="dropdown-content">
+                                                <a href="{{ url_for('pma_checker') }}"><img
+                                                                src="{{ url_for('static', filename='icons/phpmyadmin-icon.webp') }}"
+                                                                alt="PMA Icon" class="nav-icon">P.M.A</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/shopping.png') }}"
+                                                                alt="Amazon Icon" class="nav-icon">B.E.S.O.S</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/search.png') }}"
+                                                                alt="Google" class="nav-icon">Google</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/whatsapp.png') }}"
+                                                                alt="whatsapp" class="nav-icon">Whatsapp</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/instagram.png') }}"
+                                                                alt="instagram" class="nav-icon">Instgram</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/tik-tok.png') }}"
+                                                                alt="tiktok" class="nav-icon">TikTok</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/telegram.png') }}"
+                                                                alt="telegram" class="nav-icon">Telegram</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/mercedes.png') }}"
+                                                                alt="Mercedes Icon" class="nav-icon">Mercedes</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/credit-card.png') }}"
+                                                                alt="BIN Icon" class="nav-icon">B.I.N</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/numlist.png') }}"
+                                                                alt="Numlist Icon" class="nav-icon">Numlist</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/ip-address.png') }}"
+                                                                alt="IP Validator Icon" class="nav-icon">I.P </a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/ssl-certificate(1).png') }}"
+                                                                alt="SSL Checker Icon" class="nav-icon">SSL</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/http(2).png') }}"
+                                                                alt="HTTP Headers Checker Icon"
+                                                                class="nav-icon">HTTP</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/web.png') }}"
+                                                                alt="Whois Lookup Icon" class="nav-icon">Whois</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/speed-test.png') }}"
+                                                                alt="Speed Test Icon" class="nav-icon">Speed</a>
+
+                                        </div>
+                                </li>
+
+                                <!-- ============================== BOTNET CONNECTION MENU ============================ -->
+
+                                <li class="dropdown">
+                                        <a href="{{ url_for('connector') }}" class="droptbtn"><img
+                                                        src="{{ url_for('static', filename='icons/bot.png') }}"
+                                                        alt="Connector Icon" class="nav-icon">BOT</a>
+                                        <div class="dropdown-content">
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/telegram.png') }}"
+                                                                alt="Telegram Icon" class="nav-icon">TELEGRAM</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/element.png') }}"
+                                                                alt="Element Icon" class="nav-icon">MATRIX</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/api.png') }}"
+                                                                alt="API Icon" class="nav-icon">MANAGER</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/auto-reply.png') }}"
+                                                                alt="Auto Responder Icon" class="nav-icon">Responder</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/auto-reply.png') }}"
+                                                                alt="Command-Line Bot Icon" class="nav-icon">Cmd
+                                                        Line</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/programming.png') }}"
+                                                                alt="API Integration Icon" class="nav-icon">BOT API</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/auto-liker.png') }}"
+                                                                alt="Auto-Liker Icon" class="nav-icon">Auto-Liker</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/data-scraping.png') }}"
+                                                                alt="Data Scraping Bot Icon" class="nav-icon">Data
+                                                        Scraping Bot</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/spam-detection.png') }}"
+                                                                alt="Spam Detection Icon" class="nav-icon">Spam
+                                                        Detection</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/conversation-flow.png') }}"
+                                                                alt="Conversation Flow Icon"
+                                                                class="nav-icon">Conversation Flow Bot</a>
+                                        </div>
+                                </li>
+
+                                <!-- ============================== GEOLOCALISATION REVERSE LOOKUP MENU ============================ -->
+
+                                <li class="dropdown">
+                                        <a href="{{ url_for('geolocator') }}" class="droptbtn"><img
+                                                        src="{{ url_for('static', filename='icons/map.png') }}"
+                                                        alt="Geolocator Icon" class="nav-icon">GEO</a>
+                                        <div class="dropdown-content">
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/ip-reverse.png') }}"
+                                                                alt="IP Icon" class="nav-icon">REVERSE-IP</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/gps-locationmobile.png') }}"
+                                                                alt="Phone Icon" class="nav-icon">PHONE-ISM</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/geolocalization.png') }}"
+                                                                alt="Geofence Icon" class="nav-icon">Geofence</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/utc.png') }}"
+                                                                alt="Time Zone Converter Icon" class="nav-icon">Time Zone</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/gpscolor.png') }}"
+                                                                alt="GPS Finder Icon" class="nav-icon">G.P.S</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/map12.png') }}"
+                                                                alt="Map Integration Icon" class="nav-icon">M.A.P</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/isp.png') }}"
+                                                                alt="ISP Locator Icon" class="nav-icon">ISP Locator</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/wify.png') }}"
+                                                                alt="Wi-Fi Hotspot Icon" class="nav-icon">Wi-Fi Loc</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/restrictions.png') }}"
+                                                                alt="Country Restrictions Checker Icon"
+                                                                class="nav-icon">Country Restrictions Checker</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/ping.png') }}"
+                                                                alt="Ping Test Icon" class="nav-icon">Ping Test</a>
+                                        </div>
+                                </li>
+
+
+                                <!-- ============================== GENERATOR OF ALREADY KNOWED ALGORYTHMS ============================ -->
+
+                                <li class="dropdown">
+                                        <a href="{{ url_for('generator') }}" class="droptbtn"><img
+                                                        src="{{ url_for('static', filename='icons/skull.png') }}"
+                                                        alt="Generator Icon" class="nav-icon">GEN</a>
+                                        <div class="dropdown-content">
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/card.png') }}"
+                                                                alt="CC Generator Icon" class="nav-icon">CC
+                                                        Generator</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/email.png') }}"
+                                                                alt="Email Generator Icon" class="nav-icon">Email
+                                                        Generator</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/phone.png') }}"
+                                                                alt="Phone Number Generator Icon" class="nav-icon">Phone
+                                                        Generator</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/address.png') }}"
+                                                                alt="Address Generator Icon" class="nav-icon">Address
+                                                        Generator</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/ip.png') }}"
+                                                                alt="IP Address Generator Icon" class="nav-icon">IP
+                                                        Address Generator</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/fake-data.png') }}"
+                                                                alt="Fake Identity Generator Icon" class="nav-icon">Fake
+                                                        Identity</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/barcode.png') }}"
+                                                                alt="Barcode Generator Icon" class="nav-icon">Barcode
+                                                        Generator</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/qrcode.png') }}"
+                                                                alt="QR Code Generator Icon" class="nav-icon">QR Code
+                                                        Generator</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/password.png') }}"
+                                                                alt="Password Generator Icon" class="nav-icon">Password
+                                                        Generator</a>
+                                                <a href="#"><img src="{{ url_for('static', filename='icons/uuid.png') }}"
+                                                                alt="UUID Generator Icon" class="nav-icon">UUID
+                                                        Generator</a>
+                                        </div>
+                                </li>
+                        </ul>
+                </nav>
+        </header>
+        <main>
+                <div id="content" class="slide-in-left"></div>
+                {% block content %}{% endblock %}
+        </main>
+
+        {% block scripts %}
+        <script src="{{ url_for('static', filename='scripts/animations.js') }}"></script>
+        {% endblock %}
+</body>
+
+</html>

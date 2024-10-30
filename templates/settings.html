@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}xex - settings   {% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/settings.css') }}"> <!-- Lien vers le CSS des paramètres -->
+    <div class="settings-container">
+        <div class="sidebar">
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='icons/seting.png') }}" class="icon">
+                <span>Platform Infos</span>
+            </div>
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='icons/server.png') }}" alt="Proxy Icon" class="icon">
+                <span>Proxy</span>
+            </div>
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='icons/vpn.png') }}" alt="VPN Icon" class="icon">
+                <span>VPN</span>
+            </div>
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='icons/programming.png') }}" alt="VPN Icon" class="icon">
+                <span>API</span>
+            </div>
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='icons/oversight.png') }}" class="icon">
+                <span>Audited</span>
+            </div>
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='icons/theme(1).png') }}" class="icon">
+                <span>Themes</span>
+            </div>
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='icons/user.png') }}" class="icon">
+                <span>Account</span>
+            </div>
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='icons/shield.png') }}" class="icon">
+                <span>Security</span>
+            </div>
+
+        </div>
+        <div class="main-content">
+            <!-- Contenu principal ici -->
+            <h2>Settings Overview</h2>
+            <p>Manage your settings here...</p>
+        </div>
+    </div>
+{% endblock %}

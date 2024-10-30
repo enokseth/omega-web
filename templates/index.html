@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}HOME - OMEGA{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}">
+
+<section>
+    <p>
+        Nous sommes ravis de vous accueillir sur notre plateforme. OMEGA est votre solution idéale pour la vérification
+        de
+        la sécurité en ligne et le contrôle des systèmes.
+    </p>
+    <p>
+        Explorez nos fonctionnalités, vérifiez vos données, et découvrez comment nous pouvons vous aider à optimiser
+        votre
+        expérience numérique.
+    </p>
+</section>
+
+<h2>Nos Services</h2>
+
+<div class="services">
+    <div class="service-item fade-in">
+        <img src="{{ url_for('static', filename='icons/backup-server-icon.png') }}" alt="Cloud Botting"
+            class="service-icon">
+        <h3>Botting dans le Cloud et a travers.</h3>
+        <p>
+            Profitez de notre service de botting dans le cloud, qui vous permet de gérer vos bots sans avoir à vous
+            soucier de l'infrastructure. Nos serveurs sont optimisés pour exécuter des tâches de manière efficace et
+            rapide.
+        </p>
+    </div>
+
+    <div class="service-item fade-in">
+        <img src="{{ url_for('static', filename='icons/checklist.png') }}" alt="Monitoring" class="service-icon">
+        <img src="{{ url_for('static', filename='icons/TRAJET.png') }}" alt="Monitoring" class="service-icon">
+        <h3>Monitoring, Analyse dans le cloud.</h3>
+        <p>
+            Notre service de monitoring vous offre une surveillance en temps réel de vos systèmes. Recevez des alertes
+            instantanées pour tout problème détecté, assurant ainsi la disponibilité continue de vos services.
+        </p>
+    </div>
+
+    <div class="service-item fade-in">
+        <img src="{{ url_for('static', filename='icons/numlist.png') }}" alt="Check Passif" class="service-icon">
+        <h3>Check Passif des Bases de Données</h3>
+        <p>
+            Effectuez un check passif de vos bases de données ligne par ligne pour vérifier et identifier
+            automatiquement celles encore valides. Notre système vous aide à garder vos données à jour et fiables.
+        </p>
+    </div>
+    <div class="service-item fade-in">
+        <img src="{{ url_for('static', filename='icons/https.png') }}" alt="Check Passif" class="service-icon">
+        <img src="{{ url_for('static', filename='icons/http.png') }}" alt="Check Passif" class="service-icon">
+        <h3>Check des certificats et des infrastructures</h3>
+        <p>
+            Effectuez un check passif de vos infrastructure un audit ligne par ligne pour vérifier et identifier
+            automatiquement celles encore valides. Notre système vous aide à garder vos données à jour et fiables.
+        </p>
+    </div>
+</div>
+
+<p>
+    Pour commencer, naviguez dans notre menu ou utilisez notre barre de recherche.
+    Si vous avez des questions, n'hésitez pas à <a href="/contact">nous contacter</a>.
+</p>
+{% endblock %}

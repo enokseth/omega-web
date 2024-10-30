@@ -1,0 +1,56 @@
+/* Animation CSS Module */
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Bounce Animation */
+.bounce {
+    animation: bounceEffect 2s infinite;
+}
+
+@keyframes bounceEffect {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Enlarging effect on hover */
+.nav-item:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Dropdown hover effect */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Style for dropdown-content */
+.dropdown-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    display: block;
+}

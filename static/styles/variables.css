@@ -1,0 +1,36 @@
+/* static/styles/variables.css */
+
+/* Déclaration de la police locale */
+@font-face {
+    font-family: 'hacked'; /* Nom de la police */
+    src: url('../fonts/HACKED/hackedretouch.ttf') format('truetype'); /* Chemin d'accès au fichier de police */
+}
+
+/* Définition des variables CSS pour la police */
+:root {
+    --font-primary: 'hacked', sans-serif; /* Police principale */
+    --font-secondary: 'hacked', sans-serif; /* Police secondaire */
+
+}
+/* Utilisation des variables dans le corps et les titres */
+body {
+    font-family: var(--font-primary);
+    font-size: 18px; /* Taille de police pour le corps (peut être ajustée) */
+}
+
+h1 {
+    font-family: var(--font-secondary);
+    font-weight: 700; /* Utiliser un poids de police différent */
+    font-size: 36px; /* Taille de police pour h1 */
+}
+
+/* Autres éléments */
+h2 {
+    font-family: var(--font-secondary);
+    font-weight: 800; /* Poids de h2 */
+    font-size: 50px; /* Taille de police pour h2 */
+}
+
+p {
+    font-size: 16px; /* Taille de police pour les paragraphes */
+}
